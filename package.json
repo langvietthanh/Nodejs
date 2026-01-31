@@ -17,15 +17,20 @@
   "scripts": {
     "start": "nodemon --inspect src/index.js",
     "watch": "sass --watch src/resources/scss/app.scss src/public/css/app.css",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "tailwindcss -i ./src/resources/scss/app.scss -o ./src/public/css/app.css --watch",
+    "build": "tailwindcss -i ./src/resources/scss/app.scss -o ./src/public/css/app.css"
   },
   "dependencies": {
     "express": "^5.2.1",
     "express-handlebars": "^8.0.4"
   },
   "devDependencies": {
+    "autoprefixer": "^10.4.23",
     "morgan": "^1.10.1",
     "nodemon": "^3.1.11",
-    "sass": "^1.97.3"
+    "postcss": "^8.5.6",
+    "sass": "^1.97.3",
+    "tailwindcss": "^3.4.19"
   }
 }
