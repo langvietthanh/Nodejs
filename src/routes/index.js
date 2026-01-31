@@ -1,11 +1,11 @@
 const newsRouter = require('./news');
-const signRouter = require('./sign');
+const siteRouter = require('./site');
 
 function router (app){
     // app.get('/news', newsController.index);
     app.use('/news', newsRouter);
-    app.use('/', signRouter);
+    app.use('/', siteRouter);
 }
 
-
 module.exports = router;
+                        
