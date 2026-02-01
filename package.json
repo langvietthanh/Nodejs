@@ -21,6 +21,14 @@
     "dev": "tailwindcss -i ./src/resources/scss/app.scss -o ./src/public/css/app.css --watch",
     "build": "tailwindcss -i ./src/resources/scss/app.scss -o ./src/public/css/app.css"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{js,json,scss}": "prettier --single-quote --trailing-comma all --tab-width 4 --write"
+  },
   "dependencies": {
     "express": "^5.2.1",
     "express-handlebars": "^8.0.4",
@@ -28,9 +36,12 @@
   },
   "devDependencies": {
     "autoprefixer": "^10.4.23",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.2.7",
     "morgan": "^1.10.1",
     "nodemon": "^3.1.11",
     "postcss": "^8.5.6",
+    "prettier": "^3.8.1",
     "sass": "^1.97.3",
     "tailwindcss": "^3.4.19"
   }
